@@ -1,0 +1,291 @@
+  * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #fff9f2;
+      color: #1a1a1a;
+      line-height: 1.6;
+      padding: 0 0;
+      margin: 0;
+    }
+
+    header {
+      background-color: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 100px;
+    }
+
+    .menu-toggle {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      display: none;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #d9168b;
+    }
+    
+   .navbar a:active {
+  color: #d9168b; /* Changes text color to pink when tapped */
+  background-color: rgba(217, 22, 139, 0.1); /* Adds a very light pink background on tap */
+  border-radius: 5px; /* Slightly rounds the corners of the background */
+}
+    .hero-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #d9168b;
+    }
+
+    .precos table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .precos th,
+    .precos td {
+      border: 1px solid #000;
+      padding: 0.8rem;
+      text-align: left;
+    }
+
+    .precos tr:nth-child(even) {
+      background-color: #ffe6f1;
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: #d9168b;
+      color: white;
+      padding: 0.6rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-bottom: 1rem;
+    }
+
+    .apresentacao {
+      font-size: 25px;
+      margin-bottom: 2rem;
+      padding: 1rem;
+
+    }
+
+    .apresentacao h2 {
+      text-align: center;
+      color: #d9168b;
+      margin-bottom: 0.5rem;
+    }
+
+    .apresentacao p {
+      text-align: justify;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #1a1a1a;
+    }
+    .endereco p{
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #1a1a1a;
+    }
+    .endereco h2 {
+     text-align: center;
+      color: #d9168b;
+      margin-bottom: 1rem;
+    }
+    .ambiente-familiar {
+      background-color: #f8f8f8;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      /* Removidos estilos de card duplicados daqui */
+    }
+    .ambiente-familiar h2 {
+      text-align: center;
+      color: #d9168b;
+      margin-bottom: 1rem;
+    }
+
+    /* CSS para o layout lado a lado com a imagem à direita */
+    .ambiente-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%; /* Garante que o flex container ocupe toda a largura disponível */
+    }
+
+    .ambiente-content p {
+      flex: 1;
+      flex-basis: 50%; /* Tenta ocupar 50% da largura do contêiner */
+      min-width: 280px; /* Um min-width um pouco menor pode ajudar em telas menores */
+      text-align: left; /* Garante que o texto fique alinhado à esquerda na disposição flex */
+    }
+
+    .ambiente-content img {
+      max-width: 45%; /* Limita a largura da imagem a 45% do contêiner pai */
+      height: auto;
+      flex-shrink: 0;
+      flex-basis: auto; /* Deixa a imagem usar sua largura natural ou max-width */
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background-color: #fff6ea;
+      border: 1px solid #000;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      color: #d9168b;
+      margin-bottom: 0.5rem;
+    }
+
+    .delivery p,
+    .delivery ul {
+      text-align: justify;
+      list-style-type: none;
+    }
+
+    .delivery a {
+      text-decoration: none;
+      color: #1a1a1a;
+    }
+
+    .contato {
+      text-align: center;
+    }
+
+    .contato img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      display: block;
+      margin-top: 0.5rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pedido {
+      background-color: #d9168b;
+      text-decoration: none;
+      border-radius: 5px;
+      color: white;
+    }
+
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #f0f0f0;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        display: none;
+        background-color: #000;
+        padding: 1rem 2rem;
+      }
+
+      .navbar.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      /* Media Query para telas menores: empilha o conteúdo do ambiente familiar */
+      .ambiente-content {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .ambiente-content p {
+        min-width: unset;
+        text-align: center; /* Centraliza o texto quando empilhado em mobile */
+      }
+
+      .ambiente-content img {
+        min-width: unset;
+        max-width: 80%;
+        margin-top: 1rem; /* Adiciona um pouco de espaço entre o texto e a imagem quando empilhados */
+      }
+    }
