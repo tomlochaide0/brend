@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brendy's Buffet Livre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+
+  <header>
+    <img src="assets/logo.webp" alt="Brendy's Logo" class="logo">
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav class="navbar" id="navbar">
+      <a href="#produtos" class="nav-link">Produtos</a>
+      <a href="#endereco" class="nav-link">Onde Estamos</a>
+      <a href="#delivery" class="nav-link">Delivery</a>
+      <a href="#contato" class="nav-link">Fale Conosco</a>
+    </nav>
+  </header>
+
+  <section class="hero-image-container">
+    <img src="https://brendys.pt/wp-content/uploads/2025/03/50_1-1536x480.png" alt="Banner Brendy's Buffet Livre">
+  </section>
+
+  <section class="apresentacao">
+    <div>
+      <h2>Nossos valores</h2>
+      <p>Brendy’s é o seu cantinho de comida brasileira autêntica em Leiria! Aqui, você encontra um cardápio recheado de
+        sabores que aquecem a alma. Sirva-se à vontade e repita quantas vezes quiser, sentindo-se em casa!</p>
+    </div>
+  </section>
+  <main>
+    <section class="precos" id="produtos">
+
+      <table>
+        <tr>
+          <th>Almoço e Jantar</th>
+          <th>Preço</th>
+        </tr>
+        <tr>
+          <td>De Segunda a Sexta</td>
+          <td>€11,50</td>
+        </tr>
+        <tr>
+          <td>Finais de Semana e Feriados</td>
+          <td>€13,50</td>
+        </tr>
+        <tr>
+          <td>Crianças (4 a 7 anos)</td>
+          <td>€6,50</td>
+        </tr>
+        <tr>
+          <td>Marmita (Leve para Casa)</td>
+          <td>€10,50</td>
+        </tr>
+
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Descubra Nossas Delícias</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="assets/1.webp" alt="Almoço e Jantar">
+          <h3>Buffet de Almoço e Jantar</h3>
+          <p>Pratos caseiros que trazem o sabor do Brasil para sua mesa.</p>
+        </div>
+        <div class="card">
+          <img src="assets/2.webp" alt="Marmitas e Delivery">
+          <h3>Marmitas e Delivery</h3>
+          <p>Peça sua refeição favorita e receba no conforto da sua casa.</p>
+        </div>
+        <div class="card">
+          <img src="assets/3.webp" alt="Sobremesas">
+          <h3>Sobremesas Especiais</h3>
+          <p>Finalize sua refeição com doces irresistíveis e tradicionais.</p>
+        </div>
+        <div class="card">
+          <img src="assets/4.webp" alt="Bebidas">
+          <h3>Bebidas Refrescantes</h3>
+          <p>Acompanhe sua comida com as melhores bebidas brasileiras.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="delivery" id="delivery">
+      <h2>Delivery: O Brendy's na Sua Casa!</h2>
+      <p>Quer saborear o melhor da **comida brasileira** sem sair do conforto do seu lar? O Brendy's leva até você! 🏡✨
+      </p>
+
+      <ul>
+        <li>📦 **Entrega rápida e segura** em toda a região!</li>
+        <li>✅ Comida caseira feita com carinho e qualidade.</li>
+        <li>✅ Custo de entrega: apenas **€0,80 por km**.</li>
+        <li>✅ Opções deliciosas para almoço, jantar e sobremesas.</li>
+      </ul>
+
+      <p><a href="https://wa.me/351912345678" class="pedido">📲 **Peça agora e aproveite! 😋🚗💨**</a></p>
+    </section>
+
+    <section class="ambiente-familiar">
+      <h2>Ambiente Familiar</h2>
+      <div class="ambiente-content">
+        <p>No Brendys, cada detalhe é pensado para que você se sinta em casa. 🏡✨ Nosso ambiente é familiar, acolhedor e
+          cheio de boas energias, onde cada refeição não é apenas um prato na mesa, mas um momento de conexão e
+          felicidade. Seja para um almoço tranquilo, um jantar especial ou um café animado com os amigos, aqui você
+          sempre
+          será recebido com carinho, sorrisos e aquele calor humano que faz toda a diferença. ❤️🥰 Venha viver essa
+          experiência e sentir o sabor de casa, longe de casa! 🍽️🇧🇷</p>
+        <img src="assets/eventos.webp">
+      </div>
+    </section>
+    <section class="contato" id="contato">
+      <h2>Fale Conosco</h2>
+      <p>Tire suas dúvidas, faça seu pedido ou nos diga um "olá" pelas nossas redes sociais:</p>
+
+      <div style="display: flex; justify-content: center; gap: 1.5rem; align-items: center; margin-top: 1rem;">
+        <a href="https://api.whatsapp.com/send?phone=351938036974&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es..." target="_blank" title="WhatsApp">
+          <img src="assets/whatsapp.png" alt="WhatsApp">
+        </a>
+
+        <a href="https://www.instagram.com/brendys.leiria/" target="_blank" title="Instagram">
+          <img src="assets/instagram.png" alt="Instagram">
+        </a>
+      </div>
+    </section>
+
+
+    <section class="endereco" id="endereco">
+      <h2>Onde Estamos</h2>
+      <p>
+        Visite-nos no Centro Comercial D. Dinis:<br>
+        Av. Combatentes da Grande Guerra, 40<br>
+        2400-121 - Leiria, Portugal
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Brendy's. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
