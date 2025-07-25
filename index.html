@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brendy's Buffet Livre</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Brendy's Buffet Livre em Leiria oferece comida brasileira autêntica com buffet à vontade, delivery e ambiente familiar.">
+  <meta property="og:title" content="Brendy's Buffet Livre - Comida Brasileira em Leiria">
+  <meta property="og:description" content="Saboreie pratos caseiros brasileiros, marmitas e sobremesas em um ambiente acolhedor. Peça delivery ou visite-nos!">
+  <meta property="og:image" content="https://brendys.pt/wp-content/uploads/2025/03/50_1-1536x480.png">
+  <meta property="og:url" content="https://brendys.pt">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Google Fonts: Inter -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'">
+  <style>
+    :root {
+      --primary-color: #d9168b; /* Pink, contrast ratio ~4.6:1 on #fff9f2 */
+      --primary-hover: #b51273;
+      --background-color: #fff9f2;
+      --text-color: #1a1a1a;
+      --card-bg: #fff6ea;
+      --alt-row-bg: #ffe6f1;
+      --header-footer-bg: #000;
+      --footer-text: #f0f0f0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      font-size: clamp(0.875rem, 2.5vw, 1rem); /* ~12pt equivalent */
+      line-height: 1.5; /* ABNT 1.5 spacing */
+    }
+
+    header {
+      background-color: var(--header-footer-bg);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand img {
+      height: 80px; /* Adjusted for mobile */
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: clamp(0.875rem, 2vw, 1rem);
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--primary-color);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-size: clamp(1.5rem, 4vw, 1.8rem); /* ~18pt equivalent */
+      line-height: 1.2;
+    }
+
+    h3 {
+      color: var(--primary-color);
+      font-size: clamp(1.125rem, 3vw, 1.25rem); /* ~14pt equivalent */
+      line-height: 1.2;
+    }
+
+    .text-content {
+      text-align: justify;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 576px) {
+      .text-content {
+        text-align: left; /* Better readability on mobile */
+      }
+    }
+
+    .pricing-table {
+      border: 1px solid var(--text-color);
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+      border: 1px solid var(--text-color);
+      padding: 0.75rem;
+    }
+
+    .pricing-table tr:nth-child(even) {
+      background-color: var(--alt-row-bg);
+    }
+
+    .primary-btn {
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      font-size: clamp(0.875rem, 2.5vw, 1rem);
+      padding: 0.75rem 1.5rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .primary-btn:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .family-section {
+      background-color: #f8f8f8;
+      border-radius: 0.5rem;
+    }
+
+    .brendy-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--text-color);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .brendy-card img {
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .location-map {
+      max-width: 800px;
+      margin: 1.5rem auto;
+    }
+
+    .review-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--text-color);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .review-stars {
+      color: #ffc107; /* Bootstrap warning color for stars */
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background-color: var(--header-footer-bg);
+      color: var(--footer-text);
+      font-size: clamp(0.75rem, 2vw, 0.875rem);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header with Bootstrap Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark py-3">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="assets/logo.webp" alt="Brendy's Logo" class="img-fluid">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto gap-3">
+            <li class="nav-item"><a class="nav-link" href="#produtos">Produtos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#endereco">Onde Estamos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#delivery">Delivery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contato">Fale Conosco</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Image -->
+  <section class="hero-image mb-4">
+    <img src="https://brendys.pt/wp-content/uploads/2025/03/50_1-768x240.png"
+         srcset="https://brendys.pt/wp-content/uploads/2025/03/50_1-768x240.png 768w, 
+                 https://brendys.pt/wp-content/uploads/2025/03/50_1-1536x480.png 1536w"
+         sizes="(max-width: 768px) 768px, 1536px"
+         alt="Banner Brendy's Buffet Livre" class="img-fluid">
+  </section>
+
+  <!-- Main Content -->
+  <main class="container py-4">
+    <!-- Apresentação -->
+    <section class="text-center mb-5">
+      <h2>Nossos Valores</h2>
+      <p class="text-content fs-5">
+        Brendy’s é o seu cantinho de comida brasileira autêntica em Leiria! Aqui, você encontra um cardápio recheado de sabores que aquecem a alma. Sirva-se à vontade e repita quantas vezes quiser, sentindo-se em casa!
+      </p>
+    </section>
+
+    <!-- Preços -->
+    <section id="produtos" class="text-center mb-5">
+      <h2>Preços</h2>
+      <div class="table-responsive">
+        <table class="table pricing-table text-center">
+          <thead>
+            <tr>
+              <th scope="col">Almoço e Jantar</th>
+              <th scope="col">Preço</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>De Segunda a Sexta</td>
+              <td>€11,50</td>
+            </tr>
+            <tr>
+              <td>Finais de Semana e Feriados</td>
+              <td>€13,50</td>
+            </tr>
+            <tr>
+              <td>Crianças (4 a 7 anos)</td>
+              <td>€6,50</td>
+            </tr>
+            <tr>
+              <td>Marmita (Leve para Casa)</td>
+              <td>€10,50</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Cards (Centered) -->
+    <section class="text-center mb-5">
+      <h2>Descubra Nossas Delícias</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 justify-content-center">
+        <div class="col">
+          <div class="card brendy-card h-100">
+            <img src="assets/1.webp" class="card-img-top" alt="Almoço e Jantar" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title">Buffet de Almoço e Jantar</h3>
+              <p class="card-text">Pratos caseiros que trazem o sabor do Brasil para sua mesa.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card brendy-card h-100">
+            <img src="assets/2.webp" class="card-img-top" alt="Marmitas e Delivery" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title">Marmitas e Delivery</h3>
+              <p class="card-text">Peça sua refeição favorita e receba no conforto da sua casa.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card brendy-card h-100">
+            <img src="assets/3.webp" class="card-img-top" alt="Sobremesas" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title">Sobremesas Especiais</h3>
+              <p class="card-text">Finalize sua refeição com doces irresistíveis e tradicionais.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card brendy-card h-100">
+            <img src="assets/4.webp" class="card-img-top" alt="Bebidas" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title">Bebidas Refrescantes</h3>
+              <p class="card-text">Acompanhe sua comida com as melhores bebidas brasileiras.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Delivery -->
+    <section id="delivery" class="text-center mb-5">
+      <h2>Delivery: O Brendy's na Sua Casa!</h2>
+      <p class="text-content fs-5">Quer saborear o melhor da <strong>comida brasileira</strong> sem sair do conforto do seu lar? O Brendy's leva até você! 🏡✨</p>
+      <ul class="list-unstyled text-content fs-5">
+        <li>📦 <strong>Entrega rápida e segura</strong> em toda a região!</li>
+        <li>✅ Comida caseira feita com carinho e qualidade.</li>
+        <li>✅ Custo de entrega: apenas <strong>€0,80 por km</strong>.</li>
+        <li>✅ Opções deliciosas para almoço, jantar e sobremesas.</li>
+      </ul>
+      <a href="https://wa.me/351912345678" class="btn primary-btn">📲 Peça agora e aproveite! 😋🚗💨</a>
+    </section>
+
+    <!-- Ambiente Familiar -->
+    <section class="family-section py-4 mb-5">
+      <h2 class="text-center">Ambiente Familiar</h2>
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <p class="text-content fs-5">
+            No Brendys, cada detalhe é pensado para que você se sinta em casa. 🏡✨ Nosso ambiente é familiar, acolhedor e cheio de boas energias, onde cada refeição não é apenas um prato na mesa, mas um momento de conexão e felicidade. Seja para um almoço tranquilo, um jantar especial ou um café animado com os amigos, aqui você sempre será recebido com carinho, sorrisos e aquele calor humano que faz toda a diferença. ❤️🥰 Venha viver essa experiência e sentir o sabor de casa, longe de casa! 🍽️🇧🇷
+          </p>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="assets/eventos.webp" alt="Cozy dining area at Brendy's" class="img-fluid rounded" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="text-center mb-5">
+      <h2>Fale Conosco</h2>
+      <p class="text-content fs-5">Tire suas dúvidas, faça seu pedido ou nos diga um "olá" pelas nossas redes sociais:</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="https://api.whatsapp.com/send?phone=351938036974&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es..." target="_blank" title="WhatsApp">
+          <img src="assets/whatsapp.png" alt="WhatsApp" class="img-fluid" style="width: 40px; height: 40px;">
+        </a>
+        <a href="https://www.instagram.com/brendys.leiria/" target="_blank" title="Instagram">
+          <img src="assets/instagram.png" alt="Instagram" class="img-fluid" style="width: 40px; height: 40px;">
+        </a>
+      </div>
+    </section>
+
+    <!-- Onde Estamos -->
+    <section id="endereco" class="text-center mb-5">
+      <h2>Onde Estamos</h2>
+      <p class="text-content fs-5">
+        Visite-nos no Centro Comercial D. Dinis:<br>
+        Av. Combatentes da Grande Guerra, 40<br>
+        2400-121 - Leiria, Portugal
+      </p>
+      <figure class="location-map">
+        <div class="ratio ratio-4x3">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3077.345766895406!2d-8.80469368460567!3d39.74329787944783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2276a2b7b7b7b7%3A0x1c7e7b7b7b7b7b7!2sAv.%20Combatentes%20da%20Grande%20Guerra%2040%2C%202400-121%20Leiria%2C%20Portugal!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus"
+                  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                  title="Mapa do Brendy's Buffet Livre no Centro Comercial D. Dinis, Leiria"></iframe>
+        </div>
+        <figcaption class="text-muted mt-2">Mapa do Brendy's Buffet Livre em Leiria</figcaption>
+      </figure>
+    </section>
+
+    <!-- Avaliações dos Clientes -->
+    <section id="avaliacoes" class="text-center mb-5" aria-labelledby="avaliacoes-title">
+      <h2 id="avaliacoes-title">Avaliações dos Clientes</h2>
+      <p class="text-content fs-5 mb-4">Veja o que nossos clientes dizem sobre nós no Google:</p>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <article class="card review-card h-100">
+            <div class="card-body">
+              <h3 class="card-title">Excelente Experiência</h3>
+              <p class="card-text text-content fs-5">
+                Ótimo ambiente, a melhor comida brasileira que já comi, é ótimo atendimento, muito carismáticos.
+              </p>
+              <p class="review-stars">★★★★★</p>
+              <p class="text-muted small">Fonte: Google via Trustindex</p>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article class="card review-card h-100">
+            <div class="card-body">
+              <h3 class="card-title">Ótimo Custo-Benefício</h3>
+              <p class="card-text text-content fs-5">
+                Muitas opções no buffet, ótimo custo benefício. Atendimento muito amigável.
+              </p>
+              <p class="review-stars">★★★★★</p>
+              <p class="text-muted small">Fonte: Google via Trustindex</p>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article class="card review-card h-100">
+            <div class="card-body">
+              <h3 class="card-title">Lugar Nota Mil</h3>
+              <p class="card-text text-content fs-5">
+                Comida esplêndida, saborosa, boa apresentação e muita variedade. Atendimento rápido e simpático, sucos naturais deliciosos. Melhor que outros restaurantes brasileiros em Leiria. Recomendo!
+              </p>
+              <p class="review-stars">★★★★★</p>
+              <p class="text-muted small">Fonte: Google via Trustindex</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-4">
+    <p>© 2025 Brendy's. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
