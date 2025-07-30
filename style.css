@@ -26,18 +26,48 @@ header {
   height: 80px;
 }
 
-.navbar-nav .nav-link {
+/* Estilos para o menu de navegação (desktop) */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 3rem; /* Espaçamento entre os itens do menu */
+}
+
+.nav-links .nav-item .nav-link {
   color: #fff;
   text-transform: uppercase;
   font-weight: 600;
   font-size: clamp(0.875rem, 2vw, 1rem);
   transition: color 0.3s ease;
+  text-decoration: none; /* Remover sublinhado padrão do link */
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
+.nav-links .nav-item .nav-link:hover,
+.nav-links .nav-item .nav-link.active {
   color: var(--primary-color);
 }
+
+/* Esconde o hambúrguer por padrão em telas grandes */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1001; /* Garante que o hambúrguer esteja acima do menu */
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
 
 .hero-image img {
   width: 100%;
@@ -59,17 +89,12 @@ h3 {
 }
 
 .text-content {
-  text-align: justify;
+  text-align: center; /* Centraliza o texto por padrão */
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
-@media (max-width: 576px) {
-  .text-content {
-    text-align: left;
-  }
-}
 
 .pricing-table {
   border: 1px solid var(--text-color);
@@ -145,7 +170,56 @@ footer {
   text-align: center;
 }
 
-#avaliacoes .text-content {
-  text-align: center;
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Esconde os links do menu em telas menores */
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--header-footer-bg); /* Use a cor do cabeçalho */
+        position: absolute;
+        top: 80px; /* Ajusta a posição abaixo da navbar (altura da logo) */
+        left: 0;
+        z-index: 1000;
+        padding: 1rem 0; /* Adiciona padding para os links no menu mobile */
+    }
+
+    .nav-links.active {
+        display: flex; /* Mostra os links quando o menu está ativo */
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 0;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil */
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .hamburger {
+        display: flex; /* Mostra o hambúrguer em telas menores */
+    }
+
+    /* Animação do hambúrguer */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg); /* Ajuste para o centro */
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg); /* Ajuste para o centro */
+    }
 }
 
+@media (max-width: 576px) {
+  .text-content {
+    text-align: center; /* Garante que o texto continue centralizado em telas muito pequenas */
+  }
+}
